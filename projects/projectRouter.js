@@ -21,7 +21,7 @@ const validateProjectId = (req, res, next) => {
 
 const validateProject = (req, res, next) => {
   const { name, description } = req.body;
-  if (name, description) {
+  if (name && description) {
     next();
   } else {
     res.status(400).json({ message: "Please include name and description fields." });
