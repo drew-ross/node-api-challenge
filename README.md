@@ -38,15 +38,25 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
--   [ ] Mention two parts of Express that you learned about this week.
+-   [X] Mention two parts of Express that you learned about this week.
 
--   [ ] Describe Middleware?
+    A: Express routing and Express middleware.
 
--   [ ] Describe a Resource?
+-   [X] Describe Middleware?
 
--   [ ] What can the API return to help clients know if a request was successful?
+    A: Middleware allows you to run extra functions on data before it reaches the last stop. This allows you to easily check, filter, or manipulate data in a consistent and repeatable way. You can chain together middleware as needed to create endpoints in Express, for example.
 
--   [ ] How can we partition our application into sub-applications?
+-   [X] Describe a Resource?
+
+    A: A resource is any file or data on the API. Following RESTful design, everything is considered a resource, and every resource should be uniquely accessible with its own URL.
+
+-   [X] What can the API return to help clients know if a request was successful?
+
+    A: A success status code such as 200, 201, or 204 (or any code in 200-299).
+
+-   [X] How can we partition our application into sub-applications?
+
+    A: Express routes help us do this by allowing us to compose our app with separate routes/files. Each route can define endpoints related to a specific resource, so each route can work as a sub-application dedicated to serving/modifying that resource.
 
 ## Minimum Viable Product
 
