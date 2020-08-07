@@ -1,5 +1,6 @@
 const express = require('express');
 
+const actionRouter = require('../actions/actionRouter');
 const projectModel = require('../data/helpers/projectModel');
 
 const router = express.Router();
@@ -54,5 +55,7 @@ router.delete('/:id', validateProjectId, (req, res) => {
     .then(success => res.status(200).json(req.project))
     .catch(error => res.status(500).json({ message: "There was a problem removing the project.", error }));
 });
+
+router.use('/:id/actions', validateProjectId, actionRouter);
 
 module.exports = router;
