@@ -49,5 +49,10 @@ router.put('/:id', validateProjectId, validateProject, (req, res) => {
     .catch(error => res.status(500).json({ message: "There was a problem updating the project.", error }));
 });
 
+router.delete('/:id', validateProjectId, (req, res) => {
+  projectModel.remove(req.params.id)
+    .then(success => res.status(200).json(req.project))
+    .catch(error => res.status(500).json({ message: "There was a problem removing the project.", error }));
+});
 
 module.exports = router;
