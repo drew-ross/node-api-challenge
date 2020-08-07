@@ -1,6 +1,7 @@
 const express = require('express');
 
 const actionModel = require('../data/helpers/actionModel');
+const projectModel = require('../data/helpers/projectModel');
 
 const router = express.Router();
 
@@ -8,7 +9,7 @@ const router = express.Router();
 
 //Endpoints
 router.get('/', (req, res) => {
-  actionModel.get()
+  projectModel.getProjectActions(req.project.id)
     .then(actions => res.status(200).json(actions))
     .catch(error => res.status(500).json({ message: 'There was an issue getting the actions', error }));
 });
