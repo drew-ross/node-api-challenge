@@ -1,12 +1,17 @@
 const express = require('express');
 const helmet = require('helmet');
 
+const projectRouter = require('./projects/projectRouter');
+
 const server = express();
 
 server.use(helmet());
 server.use(express.json());
 
-server.use((req, res) => {
+
+server.use('/projects', projectRouter);
+
+server.use('/', (req, res) => {
   res.status(200).json({ message: "API running." });
 });
 
