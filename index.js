@@ -11,7 +11,7 @@ server.use(express.json());
 
 server.use('/projects', projectRouter);
 
-server.use('/', (req, res) => {
+server.get('/', (req, res) => {
   res.status(200).json({ message: "API running." });
 });
 
